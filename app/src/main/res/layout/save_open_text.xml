@@ -2,6 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -21,11 +22,26 @@
         android:layout_height="wrap_content"
 
         android:onClick="saveText"
+        android:text="Сохранить на SD"
+        app:layout_constraintBottom_toTopOf="@id/text"
+        app:layout_constraintHorizontal_bias="0.068"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/save_text1"
+        app:layout_constraintTop_toBottomOf="@id/editor" />
+
+    <Button
+        android:id="@+id/save_text1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:onClick="saveText"
         android:text="Сохранить"
+        app:layout_constraintBottom_toTopOf="@id/text"
+        app:layout_constraintHorizontal_bias="0.849"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/text"
-        app:layout_constraintTop_toBottomOf="@id/editor" />
+        app:layout_constraintTop_toBottomOf="@id/editor"
+        app:layout_constraintVertical_bias="1.0" />
 
     <TextView
         android:id="@+id/text"
@@ -34,19 +50,60 @@
         android:gravity="start"
         android:textSize="18sp"
 
+        app:layout_constraintBottom_toTopOf="@+id/open_text"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/open_text"
         app:layout_constraintTop_toBottomOf="@+id/save_text" />
+
     <Button
-        android:id="@+id/open_text"
+        android:id="@+id/open_text1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:onClick="openText"
         android:text="Открыть"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.861"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/deleteSD"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:onClick="deleteFileSD"
+        android:text="Удалить с SD"
+        app:layout_constraintBottom_toTopOf="@+id/open_text"
+        app:layout_constraintHorizontal_bias="0.132"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <Button
+        android:id="@+id/delete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:onClick="deleteFile"
+        android:text="Удалить"
+        app:layout_constraintBottom_toTopOf="@+id/open_text1"
+        app:layout_constraintHorizontal_bias="0.753"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <Button
+        android:id="@+id/open_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="41dp"
+        android:layout_marginEnd="264dp"
+        android:onClick="openText"
+        android:text="Открыть с SD"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/text" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
